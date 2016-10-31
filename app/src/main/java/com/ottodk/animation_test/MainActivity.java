@@ -15,7 +15,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mImageView = (ImageView) findViewById(R.id.imageView);
 
+        //here I am bringing picture outside the visible view on Y and then
+        // bringing back up by clicking on hidden view
+        mImageView.setTranslationY(1200f);
+
         mImageView2 = (ImageView) findViewById(R.id.imageView2);
+        mImageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crossfade();
+            }
+        });
 
 
         mImageView.setOnClickListener(new View.OnClickListener() {
@@ -28,14 +38,19 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void crossfade() {
-        if (mImageView2.getAlpha() == 0) {
 
-            mImageView.animate().alpha(0f).setDuration(2000);
-            mImageView2.animate().alpha(1f).setDuration(2000);
-        } else {
-            mImageView2.animate().alpha(0f).setDuration(2000);
-            mImageView.animate().alpha(1f).setDuration(2000);
-        }
+        // down
+        //mImageView.animate().translationYBy(1200f).setDuration(2000);
+
+        //up
+        mImageView.animate().translationYBy(-1200f).setDuration(2000);
+
+        // moves right
+       // mImageView.animate().translationXBy(600f).setDuration(2000);
+
+        // moves left
+        //mImageView.animate().translationXBy(-600f).setDuration(2000);
+
 
     }
 }
