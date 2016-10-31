@@ -24,9 +24,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //spins according to set degree
+    //scales according to set axes, we can combine those as well
     private void rotate() {
-        mImageView.animate().rotation(180f).setDuration(2000);
+        mImageView.animate().scaleX(0.5f).scaleY(0.5f).setDuration(2000);
+        /*mImageView.animate()
+                .scaleX(0f)
+                .scaleY(0f)
+                .alpha(0f)
+                .rotation(480f)
+                .setDuration(2000);*/
 
     }
 }
