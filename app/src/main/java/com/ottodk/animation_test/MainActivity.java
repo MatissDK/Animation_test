@@ -15,42 +15,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mImageView = (ImageView) findViewById(R.id.imageView);
 
-        //here I am bringing picture outside the visible view on Y and then
-        // bringing back up by clicking on hidden view
-        mImageView.setTranslationY(1200f);
-
-        mImageView2 = (ImageView) findViewById(R.id.imageView2);
-        mImageView2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                crossfade();
-            }
-        });
-
-
         mImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                crossfade();
+                rotate();
             }
         });
     }
 
 
-    private void crossfade() {
-
-        // down
-        //mImageView.animate().translationYBy(1200f).setDuration(2000);
-
-        //up
-        mImageView.animate().translationYBy(-1200f).setDuration(2000);
-
-        // moves right
-       // mImageView.animate().translationXBy(600f).setDuration(2000);
-
-        // moves left
-        //mImageView.animate().translationXBy(-600f).setDuration(2000);
-
+    //spins according to set degree
+    private void rotate() {
+        mImageView.animate().rotation(180f).setDuration(2000);
 
     }
 }
